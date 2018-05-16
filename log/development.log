@@ -383,3 +383,650 @@ Processing by GenresController#index as HTML
 Completed 200 OK in 35ms (Views: 33.5ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/books" for 127.0.0.1 at 2018-05-16 14:27:39 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/sk/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:28
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:45
+  Rendered books/index.html.erb within layouts/application (46.9ms)
+Completed 200 OK in 437ms (Views: 404.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2018-05-16 14:27:45 +0200
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  Rendered genres/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 93ms (Views: 72.3ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/genres/new" for 127.0.0.1 at 2018-05-16 14:27:49 +0200
+Processing by GenresController#new as HTML
+  Rendering genres/new.html.erb within layouts/application
+  Rendered genres/_form.html.erb (14.1ms)
+  Rendered genres/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 127ms (Views: 67.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/genres" for 127.0.0.1 at 2018-05-16 14:27:59 +0200
+Processing by GenresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DcO4fCH1z6Az7m+b+Z1iTxev0v530DoJwh1Yrs0PkBQZ8UV1vRZO8k+/jxumXImdBE8q0V4q5NEYq92BoYTrIw==", "genre"=>{"name"=>"Horror", "desc"=>"asjdalsjdklasjdlasjdlakjaskd"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/genres_controller.rb:35
+  [1m[36mGenre Create (3.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "desc", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Horror"], ["desc", "asjdalsjdklasjdlasjdlakjaskd"], ["created_at", "2018-05-16 12:27:59.492878"], ["updated_at", "2018-05-16 12:27:59.492878"]]
+  ↳ app/controllers/genres_controller.rb:35
+  [1m[35m (41.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/genres_controller.rb:35
+Redirected to http://localhost:3000/genres/1
+Completed 302 Found in 54ms (ActiveRecord: 44.2ms)
+
+
+Started GET "/genres/1" for 127.0.0.1 at 2018-05-16 14:27:59 +0200
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:72
+  Rendering genres/show.html.erb within layouts/application
+  Rendered genres/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 84ms (Views: 61.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2018-05-16 14:28:01 +0200
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  Rendered genres/index.html.erb within layouts/application (13.7ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Genre:0x00007f875a23e5b8>):
+    24:     <tbody>
+    25:       <% @genres.each do |genre| %>
+    26:         <tr>
+    27:           <td align="center"><%= genre.title %></td>
+    28:           <td align="center"><%= link_to 'Details', genre, :class => "btn btn-info btn-sm" %></td>
+    29:           <td align="center"><%= link_to 'Edit', edit_genre_path(genre), :class => "btn btn-info btn-sm" %></td>
+    30:           <td align="center"><%= link_to 'Delete', genre, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %></td>
+  
+app/views/genres/index.html.erb:27:in `block in _app_views_genres_index_html_erb__2598208006258370091_70109655363880'
+app/views/genres/index.html.erb:25:in `_app_views_genres_index_html_erb__2598208006258370091_70109655363880'
+Started GET "/genres/1" for 127.0.0.1 at 2018-05-16 14:28:37 +0200
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:72
+  Rendering genres/show.html.erb within layouts/application
+  Rendered genres/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 74ms (Views: 71.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2018-05-16 14:28:39 +0200
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 138ms (Views: 135.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/genres/1" for 127.0.0.1 at 2018-05-16 14:28:44 +0200
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:72
+  Rendering genres/show.html.erb within layouts/application
+  Rendered genres/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 68ms (Views: 58.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2018-05-16 14:28:45 +0200
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 95ms (Views: 92.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/genres/1/edit" for 127.0.0.1 at 2018-05-16 14:28:46 +0200
+Processing by GenresController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:72
+  Rendering genres/edit.html.erb within layouts/application
+  Rendered genres/_form.html.erb (15.4ms)
+  Rendered genres/edit.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 95ms (Views: 91.3ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/genres/1" for 127.0.0.1 at 2018-05-16 14:28:50 +0200
+Processing by GenresController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ViQC30Lw8fnbz94FpuVBYUkDls9qvBgIkjGF57cECJt0856WBhH+LeblCE4WgDU20boOCKc+FRF4WV9E32sGxA==", "genre"=>{"name"=>"H", "desc"=>"asjdalsjdklasjdlasjdlakjaskd"}, "commit"=>"Save", "id"=>"1"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:72
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/genres_controller.rb:49
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/genres_controller.rb:49
+  Rendering genres/edit.html.erb within layouts/application
+  Rendered genres/_form.html.erb (10.1ms)
+  Rendered genres/edit.html.erb within layouts/application (34.2ms)
+Completed 200 OK in 129ms (Views: 95.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2018-05-16 14:28:52 +0200
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 87ms (Views: 84.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/genres/new" for 127.0.0.1 at 2018-05-16 14:28:54 +0200
+Processing by GenresController#new as HTML
+  Rendering genres/new.html.erb within layouts/application
+  Rendered genres/_form.html.erb (2.7ms)
+  Rendered genres/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 52ms (Views: 50.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2018-05-16 14:28:56 +0200
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (15.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 108ms (Views: 90.7ms | ActiveRecord: 15.9ms)
+
+
+Started GET "/genres/new" for 127.0.0.1 at 2018-05-16 14:28:58 +0200
+Processing by GenresController#new as HTML
+  Rendering genres/new.html.erb within layouts/application
+  Rendered genres/_form.html.erb (23.8ms)
+  Rendered genres/new.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 127ms (Views: 125.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/genres" for 127.0.0.1 at 2018-05-16 14:29:04 +0200
+Processing by GenresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0X8vieVMg4OSzz2NGx+6+2XRl6xAxz74btxoLpjUAX3FTdKAea8C0e6e3Q1E3lEpdjFvg2k94CC0au0B9F96Sg==", "genre"=>{"name"=>"Fantasy", "desc"=>"asjlaksjf"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/genres_controller.rb:35
+  [1m[36mGenre Create (4.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "desc", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Fantasy"], ["desc", "asjlaksjf"], ["created_at", "2018-05-16 12:29:04.809828"], ["updated_at", "2018-05-16 12:29:04.809828"]]
+  ↳ app/controllers/genres_controller.rb:35
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/genres_controller.rb:35
+Redirected to http://localhost:3000/genres/2
+Completed 302 Found in 26ms (ActiveRecord: 13.9ms)
+
+
+Started GET "/genres/2" for 127.0.0.1 at 2018-05-16 14:29:04 +0200
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:72
+  Rendering genres/show.html.erb within layouts/application
+  Rendered genres/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 47ms (Views: 43.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2018-05-16 14:29:06 +0200
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (7.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 82ms (Views: 71.8ms | ActiveRecord: 7.8ms)
+
+
+Started DELETE "/genres/1" for 127.0.0.1 at 2018-05-16 14:29:08 +0200
+Processing by GenresController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/pLgU6vZ9+8zw9hTNtQs8Z0JM8Ic6NXyghE0uRukUV/QC4m7q60ARsf2tXs/XXoVDORAQd+7tFk2mwN1nrKWVA==", "id"=>"1"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:72
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/genres_controller.rb:62
+  [1m[36mGenre Destroy (1.9ms)[0m  [1m[31mDELETE FROM "genres" WHERE "genres"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/genres_controller.rb:62
+  [1m[35m (26.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/genres_controller.rb:62
+Redirected to http://localhost:3000/genres
+Completed 302 Found in 34ms (ActiveRecord: 29.1ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2018-05-16 14:29:08 +0200
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 69ms (Views: 67.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/genres/new" for 127.0.0.1 at 2018-05-16 14:29:13 +0200
+Processing by GenresController#new as HTML
+  Rendering genres/new.html.erb within layouts/application
+  Rendered genres/_form.html.erb (3.6ms)
+  Rendered genres/new.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 79ms (Views: 73.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/genres" for 127.0.0.1 at 2018-05-16 14:29:17 +0200
+Processing by GenresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"osisjWhuJxlqQnCFTFyU6fPTr9dRf+5209TF7QIcIVC2+lGE9I2mSxYTkAUTnX874DNX+HiFMK4JYkDCbpdaZw==", "genre"=>{"name"=>"Horror", "desc"=>"ajdlaskd"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/genres_controller.rb:35
+  [1m[36mGenre Create (2.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "desc", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Horror"], ["desc", "ajdlaskd"], ["created_at", "2018-05-16 12:29:17.128101"], ["updated_at", "2018-05-16 12:29:17.128101"]]
+  ↳ app/controllers/genres_controller.rb:35
+  [1m[35m (13.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/genres_controller.rb:35
+Redirected to http://localhost:3000/genres/3
+Completed 302 Found in 27ms (ActiveRecord: 16.4ms)
+
+
+Started GET "/genres/3" for 127.0.0.1 at 2018-05-16 14:29:17 +0200
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:72
+  Rendering genres/show.html.erb within layouts/application
+  Rendered genres/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 61ms (Views: 58.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2018-05-16 14:29:18 +0200
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 137ms (Views: 132.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/genres/new" for 127.0.0.1 at 2018-05-16 14:29:25 +0200
+Processing by GenresController#new as HTML
+  Rendering genres/new.html.erb within layouts/application
+  Rendered genres/_form.html.erb (2.3ms)
+  Rendered genres/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 73ms (Views: 71.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/genres" for 127.0.0.1 at 2018-05-16 14:29:29 +0200
+Processing by GenresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QhwX9AbvJDcc0Q6A62n4TuRyU2BrhM2rZm96D7+WIXFWLur9mgylZWCA7gC0qBOc95KrT0J+E3O82f8g0x1aRg==", "genre"=>{"name"=>"Historical", "desc"=>"adasda"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/genres_controller.rb:35
+  [1m[36mGenre Create (2.7ms)[0m  [1m[32mINSERT INTO "genres" ("name", "desc", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Historical"], ["desc", "adasda"], ["created_at", "2018-05-16 12:29:29.669539"], ["updated_at", "2018-05-16 12:29:29.669539"]]
+  ↳ app/controllers/genres_controller.rb:35
+  [1m[35m (6.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/genres_controller.rb:35
+Redirected to http://localhost:3000/genres/4
+Completed 302 Found in 16ms (ActiveRecord: 9.2ms)
+
+
+Started GET "/genres/4" for 127.0.0.1 at 2018-05-16 14:29:29 +0200
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:72
+  Rendering genres/show.html.erb within layouts/application
+  Rendered genres/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 161ms (Views: 157.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2018-05-16 14:29:32 +0200
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (3.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 66ms (Views: 60.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/genres?utf8=%E2%9C%93&toSearch=Historical" for 127.0.0.1 at 2018-05-16 14:29:37 +0200
+Processing by GenresController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Historical"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE (name LIKE '%Historical%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE (name LIKE '%Historical%') ORDER BY "genres"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 71ms (Views: 63.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/genres?direction=desc&sort=name" for 127.0.0.1 at 2018-05-16 14:29:46 +0200
+Processing by GenresController#index as HTML
+  Parameters: {"direction"=>"desc", "sort"=>"name"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name desc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name desc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 91ms (Views: 88.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/genres?direction=asc&sort=name" for 127.0.0.1 at 2018-05-16 14:29:46 +0200
+Processing by GenresController#index as HTML
+  Parameters: {"direction"=>"asc", "sort"=>"name"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (38.2ms)
+Completed 200 OK in 97ms (Views: 92.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/genres?direction=desc&sort=name" for 127.0.0.1 at 2018-05-16 14:29:47 +0200
+Processing by GenresController#index as HTML
+  Parameters: {"direction"=>"desc", "sort"=>"name"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name desc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name desc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 101ms (Views: 98.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/genres?direction=asc&sort=name" for 127.0.0.1 at 2018-05-16 14:29:48 +0200
+Processing by GenresController#index as HTML
+  Parameters: {"direction"=>"asc", "sort"=>"name"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 97ms (Views: 93.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/genres?direction=desc&sort=name" for 127.0.0.1 at 2018-05-16 14:29:49 +0200
+Processing by GenresController#index as HTML
+  Parameters: {"direction"=>"desc", "sort"=>"name"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name desc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name desc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (30.0ms)
+Completed 200 OK in 106ms (Views: 103.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/genres?direction=asc&sort=name" for 127.0.0.1 at 2018-05-16 14:29:50 +0200
+Processing by GenresController#index as HTML
+  Parameters: {"direction"=>"asc", "sort"=>"name"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 80ms (Views: 76.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/genres?direction=desc&sort=name" for 127.0.0.1 at 2018-05-16 14:29:51 +0200
+Processing by GenresController#index as HTML
+  Parameters: {"direction"=>"desc", "sort"=>"name"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name desc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name desc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 130ms (Views: 128.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/genres?direction=asc&sort=name" for 127.0.0.1 at 2018-05-16 14:29:51 +0200
+Processing by GenresController#index as HTML
+  Parameters: {"direction"=>"asc", "sort"=>"name"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (4.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (2.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (21.5ms)
+Completed 200 OK in 105ms (Views: 95.7ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/genres/new" for 127.0.0.1 at 2018-05-16 14:30:01 +0200
+Processing by GenresController#new as HTML
+  Rendering genres/new.html.erb within layouts/application
+  Rendered genres/_form.html.erb (3.4ms)
+  Rendered genres/new.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 85ms (Views: 83.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2018-05-16 14:30:04 +0200
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 82ms (Views: 72.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/genres/new" for 127.0.0.1 at 2018-05-16 14:30:21 +0200
+Processing by GenresController#new as HTML
+  Rendering genres/new.html.erb within layouts/application
+  Rendered genres/_form.html.erb (4.3ms)
+  Rendered genres/new.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 80ms (Views: 78.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/genres" for 127.0.0.1 at 2018-05-16 14:30:30 +0200
+Processing by GenresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CEda4aRHeGL/8za3M6DXKiS4fym+Yn2AbidCezaGdpwcdafoOKT5MIOi1jdsYTz4N1iHBpeYo1i0kcdUWg0Nqw==", "genre"=>{"name"=>"Detective", "desc"=>"dasdasd"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/genres_controller.rb:35
+  [1m[36mGenre Create (6.5ms)[0m  [1m[32mINSERT INTO "genres" ("name", "desc", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Detective"], ["desc", "dasdasd"], ["created_at", "2018-05-16 12:30:30.415967"], ["updated_at", "2018-05-16 12:30:30.415967"]]
+  ↳ app/controllers/genres_controller.rb:35
+  [1m[35m (18.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/genres_controller.rb:35
+Redirected to http://localhost:3000/genres/5
+Completed 302 Found in 32ms (ActiveRecord: 25.0ms)
+
+
+Started GET "/genres/5" for 127.0.0.1 at 2018-05-16 14:30:30 +0200
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:72
+  Rendering genres/show.html.erb within layouts/application
+  Rendered genres/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 54ms (Views: 51.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2018-05-16 14:30:31 +0200
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 107ms (Views: 104.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/genres/new" for 127.0.0.1 at 2018-05-16 14:30:54 +0200
+Processing by GenresController#new as HTML
+  Rendering genres/new.html.erb within layouts/application
+  Rendered genres/_form.html.erb (3.4ms)
+  Rendered genres/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 53ms (Views: 51.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/genres" for 127.0.0.1 at 2018-05-16 14:31:03 +0200
+Processing by GenresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gylRh3Ftg+pa/pu13Zk9eaEBma7WNXgV+/BDkWEHWc6XG6yO7Y4CuCavezWCWNarsuFhgf/Pps0hRsa+DYwi+Q==", "genre"=>{"name"=>"Science", "desc"=>"asadasdasd"}, "commit"=>"Save"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/genres_controller.rb:35
+  [1m[36mGenre Create (1.7ms)[0m  [1m[32mINSERT INTO "genres" ("name", "desc", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Science"], ["desc", "asadasdasd"], ["created_at", "2018-05-16 12:31:03.899580"], ["updated_at", "2018-05-16 12:31:03.899580"]]
+  ↳ app/controllers/genres_controller.rb:35
+  [1m[35m (23.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/genres_controller.rb:35
+Redirected to http://localhost:3000/genres/6
+Completed 302 Found in 32ms (ActiveRecord: 25.0ms)
+
+
+Started GET "/genres/6" for 127.0.0.1 at 2018-05-16 14:31:03 +0200
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:72
+  Rendering genres/show.html.erb within layouts/application
+  Rendered genres/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 71ms (Views: 68.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2018-05-16 14:31:05 +0200
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 78ms (Views: 74.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/genres/new" for 127.0.0.1 at 2018-05-16 14:31:12 +0200
+Processing by GenresController#new as HTML
+  Rendering genres/new.html.erb within layouts/application
+  Rendered genres/_form.html.erb (2.7ms)
+  Rendered genres/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 43ms (Views: 41.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/genres" for 127.0.0.1 at 2018-05-16 14:31:15 +0200
+Processing by GenresController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NemA042+1AkmP8G+Hwm6/9/mTzo2X+Ytao9ZluOdbNMh233aEV1VW1puIT5AyFEtzAa3FR+lOPWwOdy5jxYX5A==", "genre"=>{"name"=>"SciFi", "desc"=>"dasdsa"}, "commit"=>"Save"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/genres_controller.rb:35
+  [1m[36mGenre Create (10.0ms)[0m  [1m[32mINSERT INTO "genres" ("name", "desc", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "SciFi"], ["desc", "dasdsa"], ["created_at", "2018-05-16 12:31:15.944998"], ["updated_at", "2018-05-16 12:31:15.944998"]]
+  ↳ app/controllers/genres_controller.rb:35
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/genres_controller.rb:35
+Redirected to http://localhost:3000/genres/7
+Completed 302 Found in 26ms (ActiveRecord: 19.2ms)
+
+
+Started GET "/genres/7" for 127.0.0.1 at 2018-05-16 14:31:15 +0200
+Processing by GenresController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/genres_controller.rb:72
+  Rendering genres/show.html.erb within layouts/application
+  Rendered genres/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 71ms (Views: 68.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2018-05-16 14:31:17 +0200
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (53.0ms)
+Completed 200 OK in 149ms (Views: 146.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/genres?page=2" for 127.0.0.1 at 2018-05-16 14:31:19 +0200
+Processing by GenresController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (11.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 5]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 5]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 72ms (Views: 58.3ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/genres?page=1" for 127.0.0.1 at 2018-05-16 14:31:20 +0200
+Processing by GenresController#index as HTML
+  Parameters: {"page"=>"1"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 84ms (Views: 80.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/genres?direction=desc&sort=name" for 127.0.0.1 at 2018-05-16 14:31:21 +0200
+Processing by GenresController#index as HTML
+  Parameters: {"direction"=>"desc", "sort"=>"name"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name desc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name desc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 122ms (Views: 115.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/genres?direction=asc&sort=name" for 127.0.0.1 at 2018-05-16 14:31:24 +0200
+Processing by GenresController#index as HTML
+  Parameters: {"direction"=>"asc", "sort"=>"name"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 88ms (Views: 84.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/genres?utf8=%E2%9C%93&toSearch=Det" for 127.0.0.1 at 2018-05-16 14:31:28 +0200
+Processing by GenresController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Det"}
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE (name LIKE '%Det%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE (name LIKE '%Det%') ORDER BY "genres"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 61ms (Views: 58.2ms | ActiveRecord: 0.6ms)
+
+
