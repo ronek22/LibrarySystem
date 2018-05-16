@@ -20,16 +20,19 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+    @genres = Genre.all.order(:name)
   end
 
   # GET /books/1/edit
   def edit
+    @genres = Genre.all.order(:name)
   end
 
   # POST /books
   # POST /books.json
   def create
     @book = Book.new(book_params)
+    @genres = Genre.all.order(:name)
 
     respond_to do |format|
       if @book.save
@@ -45,6 +48,8 @@ class BooksController < ApplicationController
   # PATCH/PUT /books/1
   # PATCH/PUT /books/1.json
   def update
+    @genres = Genre.all.order(:name)
+    
     respond_to do |format|
       if @book.update(book_params)
         format.html { redirect_to @book, notice: 'Book was successfully updated.' }

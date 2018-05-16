@@ -1030,3 +1030,254 @@ Processing by GenresController#index as HTML
 Completed 200 OK in 61ms (Views: 58.2ms | ActiveRecord: 0.6ms)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/books" for 127.0.0.1 at 2018-05-16 14:43:51 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/sk/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:28
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:45
+  Rendered books/index.html.erb within layouts/application (55.1ms)
+Completed 200 OK in 644ms (Views: 545.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2018-05-16 14:44:04 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/books/_form.html.erb:31
+  Rendered books/_form.html.erb (103.8ms)
+  Rendered books/new.html.erb within layouts/application (106.6ms)
+Completed 200 OK in 195ms (Views: 175.9ms | ActiveRecord: 1.4ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/books" for 127.0.0.1 at 2018-05-16 14:46:28 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/sk/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:28
+  Rendered books/index.html.erb within layouts/application (53.9ms)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    29:         <tr>
+    30:           <td align="center"><%= book.title %></td>
+    31:           <td align="center"><%= book.author %></td>
+    32:           <td align="center"><%= book.genre.name %></td>
+    33:           <td align="center"><%= book.year %></td>
+    34:           <td align="center"><%= link_to 'Details', book, :class => "btn btn-info btn-sm" %></td>
+    35:           <td align="center"><%= link_to 'Edit', edit_book_path(book), :class => "btn btn-info btn-sm" %></td>
+  
+app/views/books/index.html.erb:32:in `block in _app_views_books_index_html_erb__4145518747990819450_30046680'
+app/views/books/index.html.erb:28:in `_app_views_books_index_html_erb__4145518747990819450_30046680'
+Started GET "/books" for 127.0.0.1 at 2018-05-16 14:47:23 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:28
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:45
+  Rendered books/index.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 646ms (Views: 642.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2018-05-16 14:47:30 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/books/_form.html.erb:31
+  Rendered books/_form.html.erb (87.1ms)
+  Rendered books/new.html.erb within layouts/application (89.0ms)
+Completed 200 OK in 237ms (Views: 231.9ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2018-05-16 14:47:45 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p27uEw4DsaZ8s/tcyWByt0aWEvCl2eEcueZXhe4TP4DQkysdsEANQo8+iK3j1yDjDVnFtjdlDrA5Si9u2YWGmw==", "book"=>{"title"=>"Potter Harry", "author"=>"Marcin", "genre_id"=>"4", "year"=>"1234", "description"=>"fsdfsdf"}, "commit"=>"Save"}
+Unpermitted parameter: :genre_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:38
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/books_controller.rb:38
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/books/_form.html.erb:31
+  Rendered books/_form.html.erb (18.7ms)
+  Rendered books/new.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 186ms (Views: 160.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2018-05-16 14:48:13 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"p27uEw4DsaZ8s/tcyWByt0aWEvCl2eEcueZXhe4TP4DQkysdsEANQo8+iK3j1yDjDVnFtjdlDrA5Si9u2YWGmw==", "book"=>{"title"=>"Potter Harry", "author"=>"Marcin", "genre_id"=>"4", "year"=>"1234", "description"=>"fsdfsdf"}, "commit"=>"Save"}
+Unpermitted parameter: :genre_id
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:38
+  [1m[35m (4.6ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/books_controller.rb:38
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/books/_form.html.erb:31
+  Rendered books/_form.html.erb (16.0ms)
+  Rendered books/new.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 128ms (Views: 64.0ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2018-05-16 14:48:26 +0200
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:39
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "genres"[0m
+  ↳ app/views/genres/index.html.erb:39
+  Rendered genres/index.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 104ms (Views: 93.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-16 14:48:30 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:28
+  [1m[36mBook Load (1.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:45
+  Rendered books/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 101ms (Views: 97.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2018-05-16 14:48:32 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:77
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 63ms (Views: 51.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-16 14:48:33 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:28
+  [1m[36mBook Load (3.9ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:45
+  Rendered books/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 124ms (Views: 116.4ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/books/1/edit" for 127.0.0.1 at 2018-05-16 14:48:35 +0200
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:77
+  Rendering books/edit.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/books/_form.html.erb:31
+  Rendered books/_form.html.erb (6.6ms)
+  Rendered books/edit.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 48ms (Views: 44.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-16 14:48:36 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:28
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:45
+  Rendered books/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 73ms (Views: 69.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2018-05-16 14:48:38 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:77
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 99ms (Views: 96.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-16 14:48:39 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:28
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:45
+  Rendered books/index.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 94ms (Views: 90.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2018-05-16 14:48:40 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/books/_form.html.erb:31
+  Rendered books/_form.html.erb (10.2ms)
+  Rendered books/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 80ms (Views: 77.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2018-05-16 14:48:50 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OTlTEI3Eg3q1kcJ+UpCxTErSiUMoL+oml1dfM7JlFZhOxJYeM4c/nkYcsY94J+MYAR1eBbqTBYoX+yfYhfOsgw==", "book"=>{"title"=>"SDasdasd", "author"=>"ADadasd", "genre_id"=>"7", "year"=>"1234", "description"=>"adasd"}, "commit"=>"Save"}
+Unpermitted parameter: :genre_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:38
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/books_controller.rb:38
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/books/_form.html.erb:31
+  Rendered books/_form.html.erb (7.6ms)
+  Rendered books/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 67ms (Views: 60.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2018-05-16 14:53:02 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NfTuzq+qrQ0fZMEucsReQxNM/9HSKn1Ef8uxcCHkRv0bbYcmr95apOtRrAZ7TQingqGMUhF5HO/LQYa8pPKB9g==", "book"=>{"title"=>"SDasdasd", "author"=>"ADadasd", "genre_id"=>"3", "year"=>"1234", "description"=>"adasd"}, "commit"=>"Save"}
+Unpermitted parameter: :genre_id
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:38
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/books_controller.rb:38
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/books/_form.html.erb:31
+  Rendered books/_form.html.erb (14.4ms)
+  Rendered books/new.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 100ms (Views: 89.4ms | ActiveRecord: 0.5ms)
+
+
