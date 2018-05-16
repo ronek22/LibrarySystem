@@ -1,5 +1,7 @@
 class Book < ApplicationRecord
   belongs_to :genre
+  belongs_to :author
+
   validates :title, :length => { :in => 3..20 }, presence: true
   validates :year, format: { with: /\A\d+(?:\.\d{0,2})?\z/ }, numericality: { greater_than_or_equal_to: 0 }
   validates :description, :length => { :in => 0..300 }

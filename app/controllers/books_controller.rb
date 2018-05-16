@@ -21,11 +21,13 @@ class BooksController < ApplicationController
   def new
     @book = Book.new
     @genres = Genre.all.order(:name)
+    @authors = Author.all.order(:lastname)
   end
 
   # GET /books/1/edit
   def edit
     @genres = Genre.all.order(:name)
+    @authors = Author.all.order(:lastname)
   end
 
   # POST /books
@@ -33,6 +35,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     @genres = Genre.all.order(:name)
+    @authors = Author.all.order(:lastname)
 
     respond_to do |format|
       if @book.save
@@ -49,7 +52,8 @@ class BooksController < ApplicationController
   # PATCH/PUT /books/1.json
   def update
     @genres = Genre.all.order(:name)
-
+    @authors = Author.all.order(:lastname)
+    
     respond_to do |format|
       if @book.update(book_params)
         format.html { redirect_to @book, notice: 'Book was successfully updated.' }
@@ -79,7 +83,7 @@ class BooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def book_params
-      params.require(:book).permit(:title, :author, :genre_id, :year, :description)
+      params.require(:book).permit(:title, :author_id, :genre_id, :year, :description)
     end
 
     def sort_column

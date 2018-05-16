@@ -1,0 +1,50 @@
+<p id="notice" class="text-center"><%= notice %></p>
+
+<div class="container">
+  <div class="d-inline-block">
+    <h1>Author</h1>
+    <%= link_to 'New Author', new_author_path, :class => "btn btn-primary btn-sm"%>
+
+<div style="float: right; margin-bottom:5px">
+  <%= form_tag(authors_path, method: :get) do %>
+    <%= text_field_tag :toSearch, params[:toSearch] %>
+    <%= submit_tag 'Search', name: nil %>
+  <% end %>
+</div>
+
+  <div>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <tr>
+        <th align="center"><%= sortable "fistname", "firstname" %></th>
+        <th align="center"><%= sortable "lastname", "lastname" %></th>
+        <th align="center"><%= sortable "nationality", "nationality" %></th>
+        <th align="center"><%= sortable "date_of_birth", "date_of_birth" %></th>
+        <th colspan="3">Options</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @authors.each do |author| %>
+        <tr>
+          <td align="center"><%= author.firstname %></td>
+          <td align="center"><%= author.lastname %></td>
+          <td align="center"><%= author.nationality %></td>
+          <td align="center"><%= author.date_of_birth %></td>
+          <td align="center"><%= link_to 'Details', author, :class => "btn btn-info btn-sm" %></td>
+          <td align="center"><%= link_to 'Edit', edit_author_path(author), :class => "btn btn-info btn-sm" %></td>
+          <td align="center"><%= link_to 'Delete', author, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger btn-sm" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<div class="flickr_pagination">
+    <div class="page_info">
+      <%= page_entries_info @authors %>
+    </div>
+    <%= will_paginate @authors, :container => false %>
+  </div>
+
+<br>

@@ -23,7 +23,7 @@
 
   <tr>
     <td><%= form.label :author %></td>
-    <td><%= form.text_field :author %></td>
+    <td><%= form.collection_select :author_id, @authors, :id, :name, include_blank: true, :class => "col-md-3" %></td>
   </tr>
 
   <tr>
