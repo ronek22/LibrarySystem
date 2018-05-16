@@ -10,7 +10,7 @@ class Book < ApplicationRecord
   def self.search(book)
     if book
       q = "%#{book}%"
-      joins(:genre).joins(:author).where('title LIKE ? OR year LIKE ? OR genres.name LIKE ?', q, q, q)
+      joins(:genre).joins(:author).where('title LIKE ? OR year LIKE ? OR genres.name LIKE ? OR authors.firstname LIKE ? OR authors.lastname LIKE ?', q, q, q, q, q)
     else
       all
 end
