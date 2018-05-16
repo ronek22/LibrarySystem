@@ -4101,3 +4101,124 @@ Processing by AuthorsController#create as HTML
 Completed 200 OK in 87ms (Views: 65.3ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/books" for 127.0.0.1 at 2018-05-16 17:54:34 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/sk/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:28
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:45
+  Rendered books/index.html.erb within layouts/application (184.3ms)
+Completed 200 OK in 861ms (Views: 828.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-16 17:55:10 +0200
+Started GET "/authors" for 127.0.0.1 at 2018-05-16 17:55:21 +0200
+Started GET "/authors" for 127.0.0.1 at 2018-05-16 17:55:21 +0200
+Started GET "/authors" for 127.0.0.1 at 2018-05-16 17:55:21 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:28
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:45
+  Rendered books/index.html.erb within layouts/application (43.3ms)
+Completed 200 OK in 80ms (Views: 70.2ms | ActiveRecord: 4.2ms)
+
+
+Processing by AuthorsController#index as HTML
+Processing by AuthorsController#index as HTML
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" ORDER BY lastname asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendering authors/index.html.erb within layouts/application
+  Rendering authors/index.html.erb within layouts/application
+  ↳ app/views/authors/index.html.erb:28
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" ORDER BY lastname asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" ORDER BY lastname asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  Rendered authors/index.html.erb within layouts/application (20.9ms)
+  ↳ app/views/authors/index.html.erb:28
+  Rendered authors/index.html.erb within layouts/application (8.3ms)
+  ↳ app/views/authors/index.html.erb:28
+  Rendered authors/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 101ms (Views: 98.3ms | ActiveRecord: 0.4ms)
+
+
+Completed 200 OK in 201ms (Views: 173.7ms | ActiveRecord: 0.4ms)
+
+
+Completed 200 OK in 208ms (Views: 171.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/authors/new" for 127.0.0.1 at 2018-05-16 17:55:26 +0200
+Processing by AuthorsController#new as HTML
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (82.4ms)
+  Rendered authors/new.html.erb within layouts/application (92.4ms)
+Completed 200 OK in 192ms (Views: 137.5ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/authors" for 127.0.0.1 at 2018-05-16 17:55:43 +0200
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H1lPTYGOgwgMsgPQLqrreamL1vxzlHnrPQapexBpLWwl53MDnmGYfJbv+CPbaiDENZx7XRM6dpOidpYUH+qTjg==", "author"=>{"firstname"=>"Hdasdasd", "lastname"=>"HDasda", "nationality"=>"Hasdasd", "date_of_birth(1i)"=>"2008", "date_of_birth(2i)"=>"5", "date_of_birth(3i)"=>"16", "bio"=>"dasdsd"}, "commit"=>"Create Author"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/authors_controller.rb:35
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/authors_controller.rb:35
+  Rendering authors/new.html.erb within layouts/application
+  Rendered authors/_form.html.erb (30.7ms)
+  Rendered authors/new.html.erb within layouts/application (32.8ms)
+Completed 200 OK in 102ms (Views: 93.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/authors" for 127.0.0.1 at 2018-05-16 17:55:51 +0200
+Processing by AuthorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wj4IN4xgnBxHFcmWMWldF9MZzS/IT6g00I9rfugjoITsp2HfjBRrtbMgpL444AvzQvS+rAscyZ9kBVyybTVnjw==", "author"=>{"firstname"=>"Hdasdasd", "lastname"=>"Hasda", "nationality"=>"Hasdasd", "date_of_birth(1i)"=>"2008", "date_of_birth(2i)"=>"5", "date_of_birth(3i)"=>"16", "bio"=>"dasdsd"}, "commit"=>"Create Author"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/authors_controller.rb:35
+  [1m[36mAuthor Create (15.6ms)[0m  [1m[32mINSERT INTO "authors" ("firstname", "lastname", "nationality", "bio", "date_of_birth", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["firstname", "Hdasdasd"], ["lastname", "Hasda"], ["nationality", "Hasdasd"], ["bio", "dasdsd"], ["date_of_birth", "2008-05-16"], ["created_at", "2018-05-16 15:55:51.275372"], ["updated_at", "2018-05-16 15:55:51.275372"]]
+  ↳ app/controllers/authors_controller.rb:35
+  [1m[35m (34.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/authors_controller.rb:35
+Redirected to http://localhost:3000/authors/1
+Completed 302 Found in 57ms (ActiveRecord: 50.2ms)
+
+
+Started GET "/authors/1" for 127.0.0.1 at 2018-05-16 17:55:51 +0200
+Processing by AuthorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/authors_controller.rb:72
+  Rendering authors/show.html.erb within layouts/application
+  Rendered authors/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 64ms (Views: 60.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/authors" for 127.0.0.1 at 2018-05-16 17:55:53 +0200
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" ORDER BY lastname asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:28
+  [1m[36mAuthor Load (6.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" ORDER BY lastname asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:45
+  Rendered authors/index.html.erb within layouts/application (48.5ms)
+Completed 200 OK in 107ms (Views: 98.0ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/authors" for 127.0.0.1 at 2018-05-16 17:56:01 +0200
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" ORDER BY lastname asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:28
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" ORDER BY lastname asc LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:45
+  Rendered authors/index.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 55ms (Views: 52.6ms | ActiveRecord: 0.6ms)
+
+
