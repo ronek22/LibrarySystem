@@ -1,22 +1,22 @@
 <p id="notice" class="text-center"><%= notice %></p>
 
-<div class="container">
-  <div class="d-inline-block">
-    <h1>Genres</h1>
-    <%= link_to 'New genre', new_genre_path, :class => "btn btn-primary btn-sm"%>
+<h1>Genres</h1><hr>
 
-<div style="float: right; margin-bottom:5px">
-  <%= form_tag(genres_path, method: :get) do %>
-    <%= text_field_tag :toSearch, params[:toSearch] %>
-    <%= submit_tag 'Search', name: nil %>
-  <% end %>
-</div>
+<div class="d-flex justify-content-between">
+    <%= link_to 'New Genre', new_genre_path, :class => "btn btn-primary btn-sm"%>
+    <div>
+    <%= form_tag(genres_path, :method => "get", class: 'form-inline my-2 my-lg-0') do %>
+          <%= text_field_tag :toSearch, params[:toSearch], placeholder: "Search genres", class: 'form-control mr-sm2', type: "search" %>
+          <%= submit_tag "Search", :name => nil, class: 'btn btn-outline-primary my-2 my-sm-0 ml-2' %>
+      <% end %>
+    </div>
+  </div>
 
   <div>
   <table class="table table-bordered table-hover">
     <thead>
       <tr>
-        <th align="center"><%= sortable "name", "name" %></th>
+        <th align="center"><%= sortable "name", "Name" %></th>
         <th colspan="3">Options</th>
       </tr>
     </thead>
@@ -34,11 +34,6 @@
   </table>
 </div>
 
-<div class="flickr_pagination">
-    <div class="page_info">
-      <%= page_entries_info @genres %>
-    </div>
-    <%= will_paginate @genres, :container => false %>
-  </div>
 
 <br>
+<%= will_paginate @genres,list_classes: %w(pagination justify-content-center) %>

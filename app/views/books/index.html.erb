@@ -1,25 +1,26 @@
 <p id="notice" class="text-center"><%= notice %></p>
 
-<div class="container">
-  <div class="d-inline-block">
-    <h1>Books</h1>
-    <%= link_to 'New Book', new_book_path, :class => "btn btn-primary btn-sm"%>
+<h1>Books</h1><hr>
 
-<div style="float: right; margin-bottom:5px">
-  <%= form_tag(books_path, method: :get) do %>
-    <%= text_field_tag :toSearch, params[:toSearch] %>
-    <%= submit_tag 'Search', name: nil %>
-  <% end %>
-</div>
+<div class="d-flex justify-content-between">
+    <%= link_to 'New Book', new_book_path, :class => "btn btn-primary btn-sm"%>
+    <div>
+    <%= form_tag(books_path, :method => "get", class: 'form-inline my-2 my-lg-0') do %>
+          <%= text_field_tag :toSearch, params[:toSearch], placeholder: "Search books", class: 'form-control mr-sm2', type: "search" %>
+          <%= submit_tag "Search", :name => nil, class: 'btn btn-outline-primary my-2 my-sm-0 ml-2' %>
+      <% end %>
+    </div>
+  </div>
+
 
   <div>
   <table class="table table-bordered table-hover">
     <thead>
       <tr>
-        <th align="center"><%= sortable "title", "title" %></th>
-        <th align="center"><%= sortable "author_id", "author" %></th>
-        <th align="center"><%= sortable "genre_id", "genre" %></th>
-        <th align="center"><%= sortable "year", "year" %></th>
+        <th align="center"><%= sortable "title", "Title" %></th>
+        <th align="center"><%= sortable "author_id", "Author" %></th>
+        <th align="center"><%= sortable "genre_id", "Genre" %></th>
+        <th align="center"><%= sortable "year", "Year" %></th>
         <th colspan="3">Options</th>
       </tr>
     </thead>
@@ -40,11 +41,5 @@
   </table>
 </div>
 
-<div class="flickr_pagination">
-    <div class="page_info">
-      <%= page_entries_info @books %>
-    </div>
-    <%= will_paginate @books, :container => false %>
-  </div>
-
 <br>
+<%= will_paginate @books,list_classes: %w(pagination justify-content-center) %>
