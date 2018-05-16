@@ -53,7 +53,7 @@ class BooksController < ApplicationController
   def update
     @genres = Genre.all.order(:name)
     @authors = Author.all.order(:lastname)
-    
+
     respond_to do |format|
       if @book.update(book_params)
         format.html { redirect_to @book, notice: 'Book was successfully updated.' }

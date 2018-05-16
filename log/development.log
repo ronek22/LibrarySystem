@@ -17082,3 +17082,1064 @@ Processing by BooksController#index as HTML
 Completed 200 OK in 81ms (Views: 77.9ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/books" for 127.0.0.1 at 2018-05-16 23:57:23 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/sk/.rvm/gems/ruby-2.5.0/gems/activerecord-5.2.0/lib/active_record/log_subscriber.rb:98
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.1ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (73.6ms)
+Completed 200 OK in 440ms (Views: 409.7ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-16 23:57:26 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 100ms (Views: 97.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/authors" for 127.0.0.1 at 2018-05-16 23:57:28 +0200
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" ORDER BY lastname asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:44
+  Rendered authors/index.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 106ms (Views: 101.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/genres" for 127.0.0.1 at 2018-05-16 23:57:29 +0200
+Processing by GenresController#index as HTML
+  Rendering genres/index.html.erb within layouts/application
+  [1m[36mGenre Load (5.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" ORDER BY name asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/genres/index.html.erb:25
+  Rendered genres/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 73ms (Views: 62.9ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-16 23:57:29 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (2.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 98ms (Views: 91.8ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Romance" for 127.0.0.1 at 2018-05-16 23:57:32 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Romance"}
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (52.6ms)
+Completed 500 Internal Server Error in 59ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Book' to association named 'authors'; perhaps you misspelled it?):
+    26:     </thead>
+    27: 
+    28:     <tbody>
+    29:       <% @books.each do |book| %>
+    30:         <tr>
+    31:           <td align="center"><%= book.title %></td>
+    32:           <td align="center"><%= book.author.name %></td>
+  
+app/views/books/index.html.erb:29:in `_app_views_books_index_html_erb__659579421629802231_70012471010840'
+Started GET "/books?utf8=%E2%9C%93&toSearch=Fd" for 127.0.0.1 at 2018-05-16 23:57:51 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Fd"}
+  Rendering books/index.html.erb within layouts/application
+  Rendered books/index.html.erb within layouts/application (4.1ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (Can't join 'Book' to association named 'authors'; perhaps you misspelled it?):
+    26:     </thead>
+    27: 
+    28:     <tbody>
+    29:       <% @books.each do |book| %>
+    30:         <tr>
+    31:           <td align="center"><%= book.title %></td>
+    32:           <td align="center"><%= book.author.name %></td>
+  
+app/views/books/index.html.erb:29:in `_app_views_books_index_html_erb__659579421629802231_70012477736880'
+Started GET "/books" for 127.0.0.1 at 2018-05-16 23:59:32 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (127.0ms)
+Completed 200 OK in 188ms (Views: 177.9ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Sander" for 127.0.0.1 at 2018-05-16 23:59:38 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Sander"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (3.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE (title LIKE '%Sander%' OR year LIKE '%Sander%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 76ms (Views: 70.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Das" for 127.0.0.1 at 2018-05-16 23:59:47 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Das"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE (title LIKE '%Das%' OR year LIKE '%Das%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 105ms (Views: 102.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Sande" for 127.0.0.1 at 2018-05-16 23:59:51 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Sande"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE (title LIKE '%Sande%' OR year LIKE '%Sande%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 89ms (Views: 85.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Rom" for 127.0.0.1 at 2018-05-16 23:59:57 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Rom"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE (title LIKE '%Rom%' OR year LIKE '%Rom%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 49ms (Views: 45.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-17 00:01:49 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (62.9ms)
+Completed 200 OK in 103ms (Views: 94.5ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Rom" for 127.0.0.1 at 2018-05-17 00:01:53 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Rom"}
+Completed 500 Internal Server Error in 647ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `auth' for #<BooksController:0x00007f5a18dfba78>):
+  
+app/controllers/books_controller.rb:9:in `index'
+Started GET "/books" for 127.0.0.1 at 2018-05-17 00:02:24 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 131ms (Views: 116.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Das" for 127.0.0.1 at 2018-05-17 00:02:27 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Das"}
+Completed 500 Internal Server Error in 643ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `author' for #<BooksController:0x0000000004763bb8>
+Did you mean?  author_url):
+  
+app/controllers/books_controller.rb:9:in `index'
+Started GET "/books" for 127.0.0.1 at 2018-05-17 00:02:51 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (93.6ms)
+Completed 200 OK in 142ms (Views: 132.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/books/12" for 127.0.0.1 at 2018-05-17 00:02:54 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mBook Load (0.2ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:81
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/show.html.erb:11
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/show.html.erb:16
+  Rendered books/show.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 111ms (Views: 107.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-17 00:02:55 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (24.8ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 163ms (Views: 136.3ms | ActiveRecord: 25.5ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=12" for 127.0.0.1 at 2018-05-17 00:03:02 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"12"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE (title LIKE '%12%' OR year LIKE '%12%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 111ms (Views: 108.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=1231" for 127.0.0.1 at 2018-05-17 00:03:07 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"1231"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE (title LIKE '%1231%' OR year LIKE '%1231%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (29.9ms)
+Completed 200 OK in 67ms (Views: 64.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Das" for 127.0.0.1 at 2018-05-17 00:03:12 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Das"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE (title LIKE '%Das%' OR year LIKE '%Das%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 106ms (Views: 103.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Sa" for 127.0.0.1 at 2018-05-17 00:03:16 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Sa"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE (title LIKE '%Sa%' OR year LIKE '%Sa%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 88ms (Views: 86.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-17 00:03:19 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 73ms (Views: 70.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/authors" for 127.0.0.1 at 2018-05-17 00:03:19 +0200
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" ORDER BY lastname asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:44
+  Rendered authors/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 54ms (Views: 51.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/authors?utf8=%E2%9C%93&toSearch=Cas" for 127.0.0.1 at 2018-05-17 00:03:22 +0200
+Processing by AuthorsController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Cas"}
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE (firstname LIKE '%Cas%' OR lastname LIKE '%Cas%' OR nationality LIKE '%Cas%'  OR date_of_birth LIKE '%Cas%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:27
+  Rendered authors/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 55ms (Views: 53.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-17 00:03:23 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (2.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 108ms (Views: 102.8ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-17 00:08:01 +0200
+  
+SyntaxError (/home/sk/Desktop/dockerRails/dockerized-helloworld/app/controllers/books_controller.rb:10: syntax error, unexpected keyword_else, expecting ')'
+    else
+    ^~~~):
+  
+app/controllers/books_controller.rb:10: syntax error, unexpected keyword_else, expecting ')'
+Started GET "/authors?utf8=%E2%9C%93&toSearch=Cas" for 127.0.0.1 at 2018-05-17 00:08:20 +0200
+Processing by AuthorsController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Cas"}
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.7ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE (firstname LIKE '%Cas%' OR lastname LIKE '%Cas%' OR nationality LIKE '%Cas%'  OR date_of_birth LIKE '%Cas%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:27
+  Rendered authors/index.html.erb within layouts/application (65.7ms)
+Completed 200 OK in 278ms (Views: 244.3ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-17 00:08:22 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (1.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (61.3ms)
+Completed 200 OK in 125ms (Views: 108.6ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Das" for 127.0.0.1 at 2018-05-17 00:08:25 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Das"}
+Completed 500 Internal Server Error in 492ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `name' for #<BooksController:0x00007f5a188bf1e0>):
+  
+app/controllers/books_controller.rb:9:in `index'
+Started GET "/books" for 127.0.0.1 at 2018-05-17 00:12:09 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (1.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (98.1ms)
+Completed 200 OK in 158ms (Views: 148.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Das" for 127.0.0.1 at 2018-05-17 00:12:12 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Das"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE (title LIKE '%Das%' OR year LIKE '%Das%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 106ms (Views: 103.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=San" for 127.0.0.1 at 2018-05-17 00:12:17 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"San"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE (title LIKE '%San%' OR year LIKE '%San%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 106ms (Views: 104.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=San" for 127.0.0.1 at 2018-05-17 00:12:20 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"San"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE (title LIKE '%San%' OR year LIKE '%San%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 105ms (Views: 103.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-17 00:12:22 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 82ms (Views: 78.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Rom" for 127.0.0.1 at 2018-05-17 00:12:25 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Rom"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE (title LIKE '%Rom%' OR year LIKE '%Rom%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 122ms (Views: 120.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Romance" for 127.0.0.1 at 2018-05-17 00:12:30 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Romance"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE (title LIKE '%Romance%' OR year LIKE '%Romance%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 58ms (Views: 56.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-17 00:13:51 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (119.4ms)
+Completed 200 OK in 229ms (Views: 190.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Das" for 127.0.0.1 at 2018-05-17 00:13:55 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Das"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/models/book.rb:10:in `search'
+app/models/book.rb:21:in `search'
+app/controllers/books_controller.rb:9:in `index'
+Started GET "/books?utf8=%E2%9C%93&toSearch=Das" for 127.0.0.1 at 2018-05-17 00:14:45 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Das"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (207.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE (books.name LIKE '%Das%' OR
+             genre.name LIKE '%Das%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (223.2ms)
+Completed 500 Internal Server Error in 262ms (ActiveRecord: 207.9ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: books.name: SELECT  "books".* FROM "books" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE (books.name LIKE '%Das%' OR
+             genre.name LIKE '%Das%') LIMIT ? OFFSET ?):
+    26:     </thead>
+    27: 
+    28:     <tbody>
+    29:       <% @books.each do |book| %>
+    30:         <tr>
+    31:           <td align="center"><%= book.title %></td>
+    32:           <td align="center"><%= book.author.name %></td>
+  
+app/views/books/index.html.erb:29:in `_app_views_books_index_html_erb__659579421629802231_70012480999920'
+Started GET "/books?utf8=%E2%9C%93&toSearch=Das" for 127.0.0.1 at 2018-05-17 00:16:40 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Das"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE (title LIKE '%Das%' OR year LIKE '%Das%' OR author.name LIKE '%Das%' OR genre.name LIKE '%Das%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (15.3ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: author.name: SELECT  "books".* FROM "books" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE (title LIKE '%Das%' OR year LIKE '%Das%' OR author.name LIKE '%Das%' OR genre.name LIKE '%Das%') LIMIT ? OFFSET ?):
+    26:     </thead>
+    27: 
+    28:     <tbody>
+    29:       <% @books.each do |book| %>
+    30:         <tr>
+    31:           <td align="center"><%= book.title %></td>
+    32:           <td align="center"><%= book.author.name %></td>
+  
+app/views/books/index.html.erb:29:in `_app_views_books_index_html_erb__659579421629802231_70012375781280'
+Started GET "/books?utf8=%E2%9C%93&toSearch=Das" for 127.0.0.1 at 2018-05-17 00:17:29 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Das"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE (title LIKE '%Das%' OR year LIKE '%Das%' OR authors.name LIKE '%Das%' OR genres.name LIKE '%Das%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (14.8ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: authors.name: SELECT  "books".* FROM "books" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE (title LIKE '%Das%' OR year LIKE '%Das%' OR authors.name LIKE '%Das%' OR genres.name LIKE '%Das%') LIMIT ? OFFSET ?):
+    26:     </thead>
+    27: 
+    28:     <tbody>
+    29:       <% @books.each do |book| %>
+    30:         <tr>
+    31:           <td align="center"><%= book.title %></td>
+    32:           <td align="center"><%= book.author.name %></td>
+  
+app/views/books/index.html.erb:29:in `_app_views_books_index_html_erb__659579421629802231_70012370215980'
+Started GET "/books?utf8=%E2%9C%93&toSearch=Das" for 127.0.0.1 at 2018-05-17 00:19:05 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Das"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE (title LIKE '%Das%' OR year LIKE '%Das%' OR author LIKE '%Das%' OR genre LIKE '%Das%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (17.0ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: author: SELECT  "books".* FROM "books" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE (title LIKE '%Das%' OR year LIKE '%Das%' OR author LIKE '%Das%' OR genre LIKE '%Das%') LIMIT ? OFFSET ?):
+    26:     </thead>
+    27: 
+    28:     <tbody>
+    29:       <% @books.each do |book| %>
+    30:         <tr>
+    31:           <td align="center"><%= book.title %></td>
+    32:           <td align="center"><%= book.author.name %></td>
+  
+app/views/books/index.html.erb:29:in `_app_views_books_index_html_erb__659579421629802231_70012481729180'
+Started GET "/books?utf8=%E2%9C%93&toSearch=Das" for 127.0.0.1 at 2018-05-17 00:21:47 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Das"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE (title LIKE '%Das%' OR year LIKE '%Das%' OR genre.name LIKE '%Das%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (12.4ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: genre.name: SELECT  "books".* FROM "books" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE (title LIKE '%Das%' OR year LIKE '%Das%' OR genre.name LIKE '%Das%') LIMIT ? OFFSET ?):
+    26:     </thead>
+    27: 
+    28:     <tbody>
+    29:       <% @books.each do |book| %>
+    30:         <tr>
+    31:           <td align="center"><%= book.title %></td>
+    32:           <td align="center"><%= book.author.name %></td>
+  
+app/views/books/index.html.erb:29:in `_app_views_books_index_html_erb__659579421629802231_70012430166560'
+Started GET "/books?utf8=%E2%9C%93&toSearch=Das" for 127.0.0.1 at 2018-05-17 00:26:41 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Das"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (7.0ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE "genres"."name" = ? LIMIT ? OFFSET ?[0m  [["name", "%Das%"], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (12.0ms)
+Completed 200 OK in 242ms (Views: 196.1ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Sander" for 127.0.0.1 at 2018-05-17 00:26:50 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Sander"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE "genres"."name" = ? LIMIT ? OFFSET ?[0m  [["name", "%Sander%"], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 99ms (Views: 90.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Roma" for 127.0.0.1 at 2018-05-17 00:27:32 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Roma"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (2.5ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE "genres"."name" = ? LIMIT ? OFFSET ?[0m  [["name", "%Roma%"], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 83ms (Views: 78.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Romance" for 127.0.0.1 at 2018-05-17 00:27:37 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Romance"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE "genres"."name" = ? LIMIT ? OFFSET ?[0m  [["name", "%Romance%"], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 50ms (Views: 48.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books?direction=asc&sort=genre_id" for 127.0.0.1 at 2018-05-17 00:27:44 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"direction"=>"asc", "sort"=>"genre_id"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY genre_id asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (1.7ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (1.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (144.3ms)
+Completed 200 OK in 203ms (Views: 194.6ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/books?direction=asc&sort=author_id" for 127.0.0.1 at 2018-05-17 00:27:44 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"direction"=>"asc", "sort"=>"author_id"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (1.1ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY author_id asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 71ms (Views: 66.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/books?direction=desc&sort=author_id" for 127.0.0.1 at 2018-05-17 00:27:45 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"direction"=>"desc", "sort"=>"author_id"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (7.9ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY author_id desc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 101ms (Views: 89.7ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/books?direction=asc&sort=author_id" for 127.0.0.1 at 2018-05-17 00:27:46 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"direction"=>"asc", "sort"=>"author_id"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY author_id asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 85ms (Views: 82.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/books?direction=asc&sort=genre_id" for 127.0.0.1 at 2018-05-17 00:27:47 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"direction"=>"asc", "sort"=>"genre_id"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY genre_id asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 102ms (Views: 99.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Romance" for 127.0.0.1 at 2018-05-17 00:28:29 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Romance"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" WHERE "genres"."name" = ? LIMIT ? OFFSET ?[0m  [["name", "%Romance%"], ["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 89ms (Views: 87.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books?direction=asc&sort=year" for 127.0.0.1 at 2018-05-17 00:28:31 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"direction"=>"asc", "sort"=>"year"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY year asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 62ms (Views: 58.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-17 00:31:05 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (8.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (98.3ms)
+Completed 200 OK in 151ms (Views: 118.6ms | ActiveRecord: 25.3ms)
+
+
+Started GET "/authors" for 127.0.0.1 at 2018-05-17 00:31:07 +0200
+Processing by AuthorsController#index as HTML
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" ORDER BY lastname asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:27
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "authors"[0m
+  ↳ app/views/authors/index.html.erb:44
+  Rendered authors/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 52ms (Views: 42.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/authors?utf8=%E2%9C%93&toSearch=Iran" for 127.0.0.1 at 2018-05-17 00:31:10 +0200
+Processing by AuthorsController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Iran"}
+  Rendering authors/index.html.erb within layouts/application
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE (firstname LIKE '%Iran%' OR lastname LIKE '%Iran%' OR nationality LIKE '%Iran%'  OR date_of_birth LIKE '%Iran%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/authors/index.html.erb:27
+  Rendered authors/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 106ms (Views: 103.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-17 00:31:12 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 101ms (Views: 90.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=San" for 127.0.0.1 at 2018-05-17 00:31:16 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"San"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (3.9ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" WHERE (title LIKE '%San%' OR year LIKE '%San%' OR genres.name LIKE '%San%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 60ms (Views: 54.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Roman" for 127.0.0.1 at 2018-05-17 00:31:21 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Roman"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" WHERE (title LIKE '%Roman%' OR year LIKE '%Roman%' OR genres.name LIKE '%Roman%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 97ms (Views: 93.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-17 00:31:50 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (126.3ms)
+Completed 200 OK in 277ms (Views: 248.7ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=San" for 127.0.0.1 at 2018-05-17 00:31:53 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"San"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" WHERE (title LIKE '%San%' OR year LIKE '%San%' OR genres.name LIKE '%San%' OR authors.name LIKE '%San%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (12.6ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: authors.name: SELECT  "books".* FROM "books" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" WHERE (title LIKE '%San%' OR year LIKE '%San%' OR genres.name LIKE '%San%' OR authors.name LIKE '%San%') LIMIT ? OFFSET ?):
+    26:     </thead>
+    27: 
+    28:     <tbody>
+    29:       <% @books.each do |book| %>
+    30:         <tr>
+    31:           <td align="center"><%= book.title %></td>
+    32:           <td align="center"><%= book.author.name %></td>
+  
+app/views/books/index.html.erb:29:in `_app_views_books_index_html_erb__659579421629802231_70012477813000'
+Started GET "/books?utf8=%E2%9C%93&toSearch=Roman" for 127.0.0.1 at 2018-05-17 00:32:34 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Roman"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::PreparedStatementInvalid (wrong number of bind variables (3 for 4) in: title LIKE ? OR year LIKE ? OR genres.name LIKE ? OR authors.name LIKE ?):
+  
+app/models/book.rb:13:in `search'
+app/controllers/books_controller.rb:9:in `index'
+Started GET "/books?utf8=%E2%9C%93&toSearch=Roman" for 127.0.0.1 at 2018-05-17 00:33:03 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Roman"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" WHERE (title LIKE '%Roman%' OR year LIKE '%Roman%' OR authors.name LIKE '%Roman%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  Rendered books/index.html.erb within layouts/application (12.9ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (SQLite3::SQLException: no such column: authors.name: SELECT  "books".* FROM "books" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" WHERE (title LIKE '%Roman%' OR year LIKE '%Roman%' OR authors.name LIKE '%Roman%') LIMIT ? OFFSET ?):
+    26:     </thead>
+    27: 
+    28:     <tbody>
+    29:       <% @books.each do |book| %>
+    30:         <tr>
+    31:           <td align="center"><%= book.title %></td>
+    32:           <td align="center"><%= book.author.name %></td>
+  
+app/views/books/index.html.erb:29:in `_app_views_books_index_html_erb__659579421629802231_70012373193520'
+Started GET "/books?utf8=%E2%9C%93&toSearch=Roman" for 127.0.0.1 at 2018-05-17 00:33:48 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Roman"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" WHERE (title LIKE '%Roman%' OR year LIKE '%Roman%' OR genres.name LIKE '%Roman%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (70.1ms)
+Completed 200 OK in 108ms (Views: 98.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2018-05-17 00:33:53 +0200
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  [1m[36mAuthor Load (0.4ms)[0m  [1m[34mSELECT "authors".* FROM "authors" ORDER BY "authors"."lastname" ASC[0m
+  ↳ app/views/books/_form.html.erb:4
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT "genres".* FROM "genres" ORDER BY "genres"."name" ASC[0m
+  ↳ app/views/books/_form.html.erb:5
+  Rendered books/_form.html.erb (270.1ms)
+  Rendered books/new.html.erb within layouts/application (272.0ms)
+Completed 200 OK in 365ms (Views: 362.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2018-05-17 00:34:08 +0200
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mSoyBAqiMwIYLdH+Zf8SHZb4ES7m0qonZof8C3mVbN+0fmEFGwYKAUD97NTT3NXHeuHgMsHxm+jS14bS1fjBqw==", "book"=>{"title"=>"Harry Potter", "author_id"=>"14", "genre_id"=>"9", "year"=>"1255", "description"=>"asd"}, "commit"=>"Create Book"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/books_controller.rb:41
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:41
+  [1m[36mAuthor Load (0.1ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:41
+  [1m[36mBook Create (41.0ms)[0m  [1m[32mINSERT INTO "books" ("title", "year", "description", "genre_id", "author_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Harry Potter"], ["year", 1255], ["description", "asd"], ["genre_id", 9], ["author_id", 14], ["created_at", "2018-05-16 22:34:08.123872"], ["updated_at", "2018-05-16 22:34:08.123872"]]
+  ↳ app/controllers/books_controller.rb:41
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/books_controller.rb:41
+Redirected to http://localhost:3000/books/13
+Completed 302 Found in 72ms (ActiveRecord: 46.4ms)
+
+
+Started GET "/books/13" for 127.0.0.1 at 2018-05-17 00:34:08 +0200
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/books_controller.rb:81
+  Rendering books/show.html.erb within layouts/application
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/books/show.html.erb:11
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/books/show.html.erb:16
+  Rendered books/show.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 65ms (Views: 49.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2018-05-17 00:34:09 +0200
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  "books".* FROM "books" ORDER BY title asc LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.3ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mCACHE Genre Load (0.0ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (40.1ms)
+Completed 200 OK in 116ms (Views: 112.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/books?utf8=%E2%9C%93&toSearch=Fantasy" for 127.0.0.1 at 2018-05-17 00:34:15 +0200
+Processing by BooksController#index as HTML
+  Parameters: {"utf8"=>"✓", "toSearch"=>"Fantasy"}
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  "books".* FROM "books" INNER JOIN "genres" ON "genres"."id" = "books"."genre_id" INNER JOIN "authors" ON "authors"."id" = "books"."author_id" WHERE (title LIKE '%Fantasy%' OR year LIKE '%Fantasy%' OR genres.name LIKE '%Fantasy%') LIMIT ? OFFSET ?[0m  [["LIMIT", 5], ["OFFSET", 0]]
+  ↳ app/views/books/index.html.erb:29
+  [1m[36mAuthor Load (0.2ms)[0m  [1m[34mSELECT  "authors".* FROM "authors" WHERE "authors"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:32
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/books/index.html.erb:33
+  Rendered books/index.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 69ms (Views: 67.3ms | ActiveRecord: 0.8ms)
+
+
