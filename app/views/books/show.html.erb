@@ -1,8 +1,6 @@
 <p id="notice" class="text-center"><%= notice %></p>
-<div class="container">
-  <div class="d-inline-block">
-    <h1>Book details</h1>
-  </div>
+
+  <h1>Book details</h1>
   <p>
     <strong>Title:</strong>
     <%= @book.title %>
@@ -28,6 +26,6 @@
     <%= @book.description %>
   </p>
 
-  <%= link_to 'Edit', edit_book_path(@book), :class => "btn btn-info btn-sm" %> |
-  <%= link_to 'Back', books_path, :class => "btn btn-info btn-sm" %>
-</div>
+  <%= link_to 'Back', books_path, class: 'btn btn-outline-info btn-sm' %>
+  <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-info btn-sm' %>
+  <%= link_to 'Destroy', @book, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %>

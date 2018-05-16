@@ -1,25 +1,24 @@
 <p id="notice" class="text-center"><%= notice %></p>
 
-<div class="container">
-  <div class="d-inline-block">
-    <h1>Author</h1>
+<h1>Authors</h1><hr>
+<div class="d-flex justify-content-between">
     <%= link_to 'New Author', new_author_path, :class => "btn btn-primary btn-sm"%>
-
-<div style="float: right; margin-bottom:5px">
-  <%= form_tag(authors_path, method: :get) do %>
-    <%= text_field_tag :toSearch, params[:toSearch] %>
-    <%= submit_tag 'Search', name: nil %>
-  <% end %>
-</div>
+    <div>
+    <%= form_tag(authors_path, :method => "get", class: 'form-inline my-2 my-lg-0') do %>
+          <%= text_field_tag :toSearch, params[:toSearch], placeholder: "Search authors", class: 'form-control mr-sm2', type: "search" %>
+          <%= submit_tag "Search", :name => nil, class: 'btn btn-outline-primary my-2 my-sm-0 ml-2' %>
+      <% end %>
+    </div>
+  </div>
 
   <div>
   <table class="table table-bordered table-hover">
     <thead>
       <tr>
-        <th align="center"><%= sortable "fistname", "firstname" %></th>
-        <th align="center"><%= sortable "lastname", "lastname" %></th>
-        <th align="center"><%= sortable "nationality", "nationality" %></th>
-        <th align="center"><%= sortable "date_of_birth", "date_of_birth" %></th>
+        <th align="center"><%= sortable "fistname", "Firstname" %></th>
+        <th align="center"><%= sortable "lastname", "Lastname" %></th>
+        <th align="center"><%= sortable "nationality", "Nationality" %></th>
+        <th align="center"><%= sortable "date_of_birth", "Date of birth" %></th>
         <th colspan="3">Options</th>
       </tr>
     </thead>
@@ -40,11 +39,6 @@
   </table>
 </div>
 
-<div class="flickr_pagination">
-    <div class="page_info">
-      <%= page_entries_info @authors %>
-    </div>
-    <%= will_paginate @authors, :container => false %>
-  </div>
 
 <br>
+<%= will_paginate @authors,list_classes: %w(pagination justify-content-center) %>

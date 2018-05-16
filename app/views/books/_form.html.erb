@@ -1,49 +1,9 @@
-<%= form_with(model: book, local: true) do |form| %>
-  <% if book.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(book.errors.count, "error") %> prohibited this book from being saved:</h2>
-
-      <ul>
-      <% book.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <table>
-    <tr>
-      <th></th>
-      <th></th>
-    </tr>
-  <tr>
-    <td><%= form.label :title %></td>
-    <td><%= form.text_field :title %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :author %></td>
-    <td><%= form.collection_select :author_id, @authors, :id, :name, include_blank: true, :class => "col-md-3" %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :genre %></td>
-    <td><%= form.collection_select :genre_id, @genres, :id, :name, include_blank: true, :class => "col-md-3" %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :year %></td>
-    <td><%= form.number_field :year %></td>
-  </tr>
-
-  <tr>
-    <td><%= form.label :description %></td>
-    <td><%= form.text_area :description %></td>
-  </tr>
-  </table>
-
-  <div class="actions">
-    <%= form.submit 'Save', :class => "btn btn-success btn-sm" %>
-  </div>
-
+<%= bootstrap_form_for(book,inline_errors: false) do |f| %>
+  <%= f.alert_message "Please fix the errors below." %>
+  <%= f.text_field :title %>
+  <%= f.collection_select :author_id, @authors, :id, :name, include_blank: true %>
+  <%= f.collection_select :genre_id, @genres, :id, :name, include_blank: true %>
+  <%= f.number_field :year %>
+  <%= f.text_area :description %>
+  <%= f.submit class: "btn btn-success" %>
 <% end %>
