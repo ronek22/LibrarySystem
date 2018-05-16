@@ -2,7 +2,7 @@
   <%= f.alert_message "Please fix the errors below." %>
   <%= f.text_field :firstname %>
   <%= f.text_field :lastname %>
-  <%= f.text_field :nationality %>
+  <%= f.select :nationality, options_for_select(Countries::LIST, "Poland") %>
   <%= f.date_select :date_of_birth, :start_year => Date.current.year, :end_year => 1900 %>
   <%= f.text_area :bio %>
   <%= f.submit class: "btn btn-success" %>
