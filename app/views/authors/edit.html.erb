@@ -1,0 +1,11 @@
+<p id="notice" class="text-center"><%= notice %></p>
+<div class="container">
+  <div class="d-inline-block">
+    <h1>Editing Author: <%= @author.name %></h1>
+  </div>
+
+  <%= render 'form', author: @author %>
+  <hr/>
+  <%= link_to 'Details', @author, :class => "btn btn-info btn-sm" %> |
+  <%= link_to 'Back', authors_path, :class => "btn btn-info btn-sm" %>
+</div>
