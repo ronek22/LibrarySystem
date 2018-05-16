@@ -9,7 +9,7 @@ class Book < ApplicationRecord
 
   def self.search(book)
     if book
-      where('title LIKE ? OR genre LIKE ? OR author LIKE ?', "%#{book}%", "%#{book}%", "%#{book}%")
+      where('title LIKE ? OR year LIKE ?', "%#{book}%", "%#{book}%")
     else
       all
     end

@@ -5,4 +5,12 @@ class Author < ApplicationRecord
     def name
       "#{lastname} #{firstname}"
     end
+
+    def self.search(author)
+      if author
+        where('firstname LIKE ? OR lastname LIKE ? OR nationality LIKE ?  OR date_of_birth LIKE ?', "%#{author}%", "%#{author}%", "%#{author}%", "%#{author}%")
+      else
+        all
+      end
+    end
 end
